@@ -1,0 +1,13 @@
+server:
+  port: 8080
+
+
+  #设置上下文根（必须以"/"开始）
+  servlet:
+    context-path: /
+
+spring:
+  profiles:
+    active: dve
+  application:
+    name: myCode
