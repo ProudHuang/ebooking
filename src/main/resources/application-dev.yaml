@@ -1,7 +1,6 @@
 server:
   port: 8080
 
-
   #设置上下文根（必须以"/"开始）
   servlet:
     context-path: /
@@ -11,3 +10,22 @@ spring:
     active: dve
   application:
     name: EBooking
+  datasource:
+    url: jdbc:mysql://localhost:3306/your_database?useSSL=false&serverTimezone=UTC
+    username: your_username
+    password: your_password
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+# MyBatis-Plus配置
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**/*.xml  # mapper XML文件位置
+  type-aliases-package: com.example.model       # 实体类包路径
+  global-config:
+    db-config:
+      id-type: auto                             # 主键生成策略 auto-数据库自增
+      logic-delete-field: deleted               # 逻辑删除字段名
+      logic-delete-value: 1                     # 逻辑已删除值
+      logic-not-delete-value: 0                 # 逻辑未删除值
+  configuration:
+    map-underscore-to-camel-case: true          # 开启驼峰命名转换
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl # 日志实现
