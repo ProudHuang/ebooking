@@ -10,4 +10,4 @@ spring:
   profiles:
     active: dve
   application:
-    name: myCode
+    name: EBooking
